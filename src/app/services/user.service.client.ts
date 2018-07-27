@@ -19,6 +19,16 @@ users = [
 
   }
 
+  findUserByCredentials(username: string, password:string){
+    for(let x =0; x< this.users.length; x++){
+      if(this.users[x].username == username && this.users[x].password == password){
+        return this.users[x]
+        console.log("finduserbyCredential is working")
+      }
+    }
+
+  }
+
 
   // findUserById(userId: string) {
   //   for (let x = 0; x < this.users.length; x++) {
