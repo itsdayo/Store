@@ -22,19 +22,19 @@ const userModel = require('../models/user/user.model.server.js')
 // passport.serializeUser(serializeUser);
 // passport.deserializeUser(deserializeUser);
 
-users = [
-        {_id: "123", username: "alice", password: "alice", Name: "Alice Wonder", email: "alice@gmail.com"},
-        {_id: "234", username: "bob", password: "bob", Name: "Bob Marley", email: "bob@whatever.com"},
-        {_id: "345", username: "charly", password: "charly", Name: "Charly Garcia", email: "charly@hotmail.com"},
-        {_id: "456", username: "shiyu", password: "shiyu", Name: "Shiyu Wang", email: "swang@ulem.org"}
+items = [
+        {_id: "123", uid:"", url: "img.jpg", Title: "Braveman Men's Slim-Fit 2-Piece Suit", shipping:"Free Shipping", price:"59.60"},
+      {_id: "234", uid:"", url: "img.jpg", Title: "Braveman Men's Slim-Fit 2-Piece Suit", shipping:"Free Shipping", price:"59.60"},
+         {_id: "345", url: "img.jpg", Title: "Braveman Men's Slim-Fit 2-Piece Suit", shipping:"Free Shipping", price:"59.60"},
+        {_id: "456", url: "img.jpg", Title: "Braveman Men's Slim-Fit 2-Piece Suit", shipping:"Free Shipping", price:"59.60"}
         ];
 
 
-app.get('/api/user/:uid', findUserById);
-app.get('/api/user', findUser);
-app.post('/api/user', createUser);
-app.put('/api/user/:uid', updateUser);
-app.delete('/api/user/:uid', deleteUser);
+app.get('/api/user/:uid/item/iid', finditemByUserId);
+app.get('/api/item', findItem);
+app.post('/api/user', createItem);
+app.put('/api/user/:uid/item', updateItem);
+app.delete('/api/user/:uid/item', deleteItem);
 app.post ('/api/register', register);
 // app.post  ('/api/login', passport.authenticate('local'), login);
 // app.post('/api/logout', logout);
@@ -93,22 +93,46 @@ function register (req, res) {
 // }
 
 
- function findUserById(req, res) {
+ function finditemByUserId(req, res) {
     let uid = req.params['uid']
-   userModel.findUserById(uid).then(
-    data => {
-         res.json(data)
-    })   
+   // userModel.findUserById(uid).then(
+   //  data => {
+   //       res.json(data)
+   //  })   
+let array = [];
+for(x=0; x>items.length; x++){
+  if(items[x].uid = uid){
+array.push(item[x])
+
+    
+  }
+  res.send(items[x])
+}
+
+  }
+
+   function findItem(req, res) {
+ 
+   // userModel.findUserById(uid).then(
+   //  data => {
+   //       res.json(data)
+   //  })   
+console.log(items)
+  res.send(items)
+
 
   }
   
+  
 
-  function createUser(req,res){
-    var user = req.body 
-  userModel.createUser(user).then(
-    (data) =>{
-        res.json(data);
-    });
+  function createItem(req,res){
+  //   var user = req.body 
+  // userModel.createUser(user).then(
+  //   (data) =>{
+  //       res.json(data);
+  //   });
+
+
 }
 
 function findUser (req, res){
@@ -139,7 +163,7 @@ function findUser (req, res){
 }
 
 
-function updateUser(req, res){
+function updateItem(req, res){
   userId =req.params['uid'];
   var user = req.body;  
 
@@ -150,7 +174,7 @@ function updateUser(req, res){
     
 }
 
-function deleteUser(req,res){
+function deleteItem(req,res){
   var userId = req.params['uid']
 
   userModel.deleteUser(uid).then(
