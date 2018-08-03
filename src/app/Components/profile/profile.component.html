@@ -1,0 +1,49 @@
+<nav class="navbar container-fluid">
+<div class="dropdown">
+  <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <i class="fas fa-user"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  
+<a class="do-ml" routerLink="" data-toggle="modal" data-target="#exampleModal">Login</a>
+
+<a class="do-ml" routerLink="">View Profile</a>
+
+<!-- Modal -->
+    
+  </div>
+</div>
+
+   <a class="p-md-5" routerLink="">Home</a>
+      <a class="navLink2" routerLink="watchlist"><i class="fas fa-eye"></i>WatchList</a>
+       <a class="navLink3" href="/user/:uid/profile">Sell</a>
+        <a routerLink="shoppingcart"> <i class="fas fa-shopping-cart"></i> <span class="counter">{{counter}}</span></a>
+         <button class="btn btn-primary" routerLink="/login">Log Out</button>
+  
+<!-- </div> -->
+     </nav>
+
+<br>
+<br>
+<br>
+<!-- <div class="row"> -->
+  <!--   <div class="col-md-7 d-none d-sm-block" > -->
+    
+
+<div>
+<div class="card2">
+ <!--  <img src="img.jpg" alt="John" style="width:100%"> -->
+  <h1>{{name}}</h1>
+  <p class="title2">{{username}}</p>
+  <p>{{email}}</p>
+  <a href="#"><i class="fa fa-dribbble"></i></a> 
+  <a href="#"><i class="fa fa-twitter"></i></a> 
+  <a href="#"><i class="fa fa-linkedin"></i></a> 
+  <a href="#"><i class="fa fa-facebook"></i></a> 
+
+ 
+<button  class="cardBtn btn btn-warning">Edit profile</button>
+<button class="cardBtn btn btn-danger">Delete profile</button>
+
+  </div>
+

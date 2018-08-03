@@ -1,0 +1,257 @@
+<nav class="navbar container-fluid">
+<div class="dropdown">
+  <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <i class="fas fa-user"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  
+<a class="do-ml" routerLink="" data-toggle="modal" data-target="#exampleModal">Login</a>
+
+<a class="do-ml" routerLink="">View Profile</a>
+
+<!-- Modal -->
+    
+  </div>
+</div>
+
+   <a class="p-md-5" routerLink="">Home</a>
+      <a class="navLink2" routerLink="watchlist"><i class="fas fa-eye"></i>WatchList</a>
+       <a class="navLink3" href="/user/:uid/profile">Sell</a>
+        <a routerLink="shoppingcart"> <i class="fas fa-shopping-cart"></i> <span class="counter">{{counter}}</span></a>
+         <button class="btn btn-primary" routerLink="/login">Log Out</button>
+  
+<!-- </div> -->
+     </nav>
+
+ <form class="container-fluid searchItems">
+   <div class="input-group ">
+      <input type="text" class="searchBar form-control" placeholder="Search for items...">
+      <span class="input-group-btn">
+      <button class="btn btn-primary" type="button">Search</button>
+      </span>
+  </div><!-- /input-group -->       
+  </form>
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+<label class="control-label" for="login">Login <span class="regForm text-danger">*</span></label>
+                    <input type="text" class="form-control" name="username" id="login" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+                 <!--    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span> -->
+
+  <label class="control-label" for="password">Password <span class="regForm text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password" id="password" ngModel #password="ngModel" aria-describedby="password"  placeholder="Password" required>
+                   <!--  <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span> -->
+<div class="do-mt">
+<input type="submit" class="btn btn-primary" id="goToChat" value="Sign in" />
+<button data-target="#exampleModal2" data-toggle="modal" class="btn btn-warning pull-right">Register</button>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  <div class="modal-body">
+<div class="row">
+<div class="col-xs-6">
+<h4>Log In</h4>
+<label class="control-label" for="login">Login <span class="regForm text-danger">*</span></label>
+                    <input type="text" class="form-control" name="username" id="login" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+                 <!--    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span> -->
+
+  <label class="control-label" for="password">Password <span class="regForm text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password" id="password" ngModel #password="ngModel" aria-describedby="password"  placeholder="Password" required>
+                 
+<div class="do-mt">
+<input type="submit" class="btn btn-primary form-control" id="goToChat" value="Sign in" />
+</div>
+</div>
+
+ <div class="col-xs-6">
+<h4>Create An Account</h4>
+<label class="control-label" for="login">Username<span class="regForm text-danger">*</span></label>
+                    <input type="text" class="form-control" name="username" id="login" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+                 <!--    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span> -->
+
+  <label class="control-label" for="password">Password<span class="regForm text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password" id="password" ngModel #password="ngModel" aria-describedby="password"  placeholder="Password" required>
+                   
+
+  <label class="control-label" for="password">Full Name<span class="regForm text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password"  ngModel #password="ngModel" aria-describedby="password"  placeholder="Password" required>
+                  
+
+  <label class="control-label" for="password">E-mail<span class="regForm text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password"  ngModel #password="ngModel" aria-describedby="password"  placeholder="Password" required>
+                  
+<div class="do-mt">
+<input type="submit" class="btn btn-success form-control" id="goToChat" value="Sign up" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+<label class="control-label" for="login">Login <span class="regForm text-danger">*</span></label>
+                    <input type="text" class="form-control" name="username" id="login" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+                 <!--    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span> -->
+
+  <label class="control-label" for="password">Password <span class="regForm text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password" id="password" ngModel #password="ngModel" aria-describedby="password"  placeholder="Password" required>
+                   <!--  <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span> -->
+<div class="do-mt">
+<input type="submit" class="btn btn-primary" id="goToChat" value="Sign in" />
+<button data-target="#exampleModal2" data-toggle="modal" class="btn btn-warning pull-right">Register</button>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+ <!-- Modal Body  -->    
+<!-- <div class="login-box">
+
+    <form  id="loginForm" (ngSubmit)="login()" #f = "ngForm"  >
+       
+            <div class="panel-heading"><b>Sign in</b> </div> -->
+           <!--  <div class="panel-body"> -->
+              <!--   <div class="form-group has-primary has-feedback">
+                    <label class="control-label" for="login">Login <span class="regForm text-danger">*</span></label>
+                    <input type="text" class="form-control" name="username" id="login" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+                    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-primary has-feedback">
+                    <label class="control-label" for="password">Password <span class="regForm text-danger">*</span></label>
+                    <input type="password" class="form-control" name="password" id="password" ngModel #password="ngModel" aria-describedby="password"  placeholder="Password" required>
+                    <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+                </div> -->
+           <!--  </div> -->
+           <!--  <div class="panel-footer">
+                <input type="submit" class="btn btn-primary" id="goToChat" value="Sign in" />
+                <a routerLink="/register" class="btn btn-warning pull-right">Register</a>
+            </div> -->
+       <!--  </div> -->
+    <!-- </form>
+</div> -->
+
+
+<!-- 
+      </div> -->
+    <!--   <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+
+
+
+  <br>
+<div>
+<ul class="links">
+<li >
+  <img  src=" https://cdn.pixabay.com/photo/2017/05/09/21/49/gecko-2299365_960_720.jpg">
+   <!--  <div class="btn-group" role="group" aria-label="Basic example"> -->
+   <br>
+    Hello
+      <button type="button" class="btn btn-sm  btn-secondary">Star</button> 
+     
+
+  </li>
+
+  <li >
+  <img  src=" https://cdn.pixabay.com/photo/2017/05/09/21/49/gecko-2299365_960_720.jpg">
+   <!--  <div class="btn-group" role="group" aria-label="Basic example"> -->
+   <br>
+    Hello
+      <button type="button" class="btn btn-sm  btn-secondary">Star</button> 
+     
+
+  </li>
+
+ </ul>
+</div>
+
+
+
+  <!--  <div class="main-wrapper">
+        
+        <p class="style61">a link</p>
+        <div class="newwireframe4row2"><button class="style64"><p class="style65">Button</p></button><button class="style66"><p class="style67">Button</p></button><button class="style68"><p class="style69">Button</p></button></div>
+        <p class="style58">a link</p>
+        <div class="newwireframe4row4"><button class="style70"><p class="style71">Button</p></button><button class="style72"><p class="style73">Button</p></button><button class="style74"><p class="style75">Button</p></button></div>
+        <p class="style63">a link</p>
+        <div class="newwireframe4row6"><button class="style76"><p class="style77">Button</p></button><button class="style78"><p class="style79">Button</p></button><button class="style80"><p class="style81">Button</p></button></div>
+        <p class="style60">a link</p>
+        <div class="newwireframe4row8"><button class="style82"><p class="style83">Button</p></button><button class="style84"><p class="style85">Button</p></button><button class="style86"><p class="style87">Button</p></button></div>
+        <p class="style59">a link</p>
+        <div class="newwireframe4row10"><button class="style88"><p class="style89">Button</p></button><button class="style90"><p class="style91">Button</p></button><button class="style92"><p class="style93">Button</p></button></div>
+        <p class="style62">a link</p>
+        <div class="newwireframe4row12"><button class="style94"><p class="style95">Button</p></button><button class="style96"><p class="style97">Button</p></button><button class="style98"><p class="style99">Button</p></button></div>
+    </div>
+ -->
+<!-- class="style12"
+class="style13" -->
+
+
+   <!--  <div class="main-wrapper">
+        <div class="newwireframe3unsupported0 unsupported"></div>
+        <div class="newwireframe3row1">
+            <div class="newwireframe3row1column1"><button class="style6"><p class="style7">Button</p></button><button class="style12"><p class="style13">Button</p></button></div>
+            <div class="newwireframe3row1column2">
+                <p class="style3">a link</p><button class="style8"><p class="style9">Button</p></button>
+                <p class="style0">a link</p><button class="style14"><p class="style15">Button</p></button>
+                <p class="style5">a link</p>
+            </div>
+            <div class="newwireframe3row1column3"><button class="style10"><p class="style11">Button</p></button><button class="style16"><p class="style17">Button</p></button></div>
+        </div>
+        <div class="newwireframe3row2"><button class="style18"><p class="style19">Button</p></button><button class="style20"><p class="style21">Button</p></button><button class="style22"><p class="style23">Button</p></button></div>
+     
+        <div class="newwireframe3row4">
+          <button class="style24"><p class="style25">Button</p></button>
+            <div class="newwireframe3row4column2">
+                <p class="style2">a link</p><button class="style26"><p class="style27">Button</p></button></div><button class="style28"><p class="style29">Button</p></button></div>
+      
+        <div class="newwireframe3row6">
+          <button class="style30"><p class="style31">Button</p></button>
+            <div class="newwireframe3row6column2">
+                <p class="style1">a link</p><button class="style32"><p class="style33">Button</p></button></div><button class="style34"><p class="style35">Button</p></button></div>
+        <p class="style4">a link</p>
+        <div class="newwireframe3row8"><button class="style36"><p class="style37">Button</p></button><button class="style38"><p class="style39">Button</p></button><button class="style40"><p class="style41">Button</p></button></div>
+    </div> -->
