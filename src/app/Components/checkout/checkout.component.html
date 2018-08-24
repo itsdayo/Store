@@ -1,0 +1,89 @@
+<nav class="navbar container-fluid">
+<div class="dropdown">
+  <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <i class="fas fa-user"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  
+<a class="do-ml" routerLink="" data-toggle="modal" data-target="#exampleModal">Login</a>
+
+<a class="do-ml" routerLink="/user/{{uid}}">View Profile</a>
+<a class="do-ml" routerLink="/user/{{uid}}">View Profile</a>
+<!-- Modal -->
+    
+  </div>
+</div>
+
+   <a class="p-md-5" routerLink="">Home</a>
+      <a class="navLink2" routerLink="/watchlist">WatchList</a>
+       <a class="navLink3" routerLink="/createPost">Sell</a>
+        <a routerLink="/shoppingcart"> <i class="fas fa-shopping-cart"></i> <span class="counter">{{carts.length}}</span></a>
+         <button class="btn btn-primary" routerLink="/login">Log In</button>
+  
+<!-- </div> -->
+     </nav>
+
+
+<div class="row">
+	<div class="col-md-4">
+     <form style="">
+     	 <label class="control-label" for="login">Full Name </label>
+                    <input type="text" class="form-control" name="username" id="login" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+            <label class="control-label" for="logi">Street Address </label>
+                    <input type="text" class="form-control" name="username" id="logi" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+           <label class="control-label" for="log"> Town/City</label>
+                    <input type="text" class="form-control" name="username" id="log" aria-describedby="log"  ngModel #username="ngModel"  placeholder="Username" required>
+            <label class="control-label" for="lo">Country </label>
+                    <input type="text" class="form-control" name="username" id="lo" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+                     <label class="control-label" for="lo">Post Code </label>
+                    <input type="text" class="form-control" name="username" id="lo" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+
+     </form>
+ </div>
+ <div class="col-md-3">
+      <form>
+     <div class="radio">
+        <label><input type="radio" name="optradio" checked>Free Shipping</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="optradio">Flat Rate 5.99$</label>
+      </div>
+      <div class="radio ">
+        <label><input type="radio" name="optradio" >Standard</label>
+      </div>
+</form>
+</div>
+<div class="col-md-3">
+      <form style="">
+        <div class="radio">
+                <label><input type="radio" name="optradio" checked>Credit Card Payment</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="optradio">PayPal Express Checkout</label>
+              </div>
+              <div class="radio ">
+                <label><input type="radio" name="optradio" >Standard</label>
+              </div>
+
+     </form>
+</div>
+<div class="col-md-3">
+        <form class="checkout">
+          <div class="panel panel-default">
+                  <div class="panel-heading">Payment Options</div>
+                  <div class="panel-body">
+                <div class="radio">
+                  <label><input type="radio" name="optradio" checked>Credit Card Payment</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="optradio">PayPal Express Checkout</label>
+                </div>
+                <div class="radio ">
+                  <label><input type="radio" name="optradio" >Standard</label>
+                </div>
+        </div>
+        </div>
+       </form>
+  </div>
+ </div>
+

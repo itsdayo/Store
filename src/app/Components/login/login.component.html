@@ -1,0 +1,29 @@
+<div class="login-box">
+<!--  --> 
+    <form  id="loginForm" (ngSubmit)="login()" #f = "ngForm">
+        <div class="panel panel-default">
+            <div class="panel-heading"><b>Sign in</b> <span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></div>
+            <hr>
+                <div class="form-group has-primary has-feedback">
+                    <label class="control-label" for="login">Login </label>
+                    <input type="text" class="form-control" name="username" id="login" aria-describedby="login"  ngModel #username="ngModel"  placeholder="Username" required>
+                    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                    <span class="regForm text-danger"  *ngIf="username.invalid && username.touched"> Please Enter your Username</span>
+                </div>
+                <div class="form-group has-primary has-feedback">
+                    <label class="control-label" for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" ngModel #password="ngModel" aria-describedby="password"  placeholder="Password" required>
+                    <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+                    <span class="regForm text-danger"  *ngIf="password.invalid && password.touched"> Please Enter your Password</span>
+                </div>
+            
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+                <a routerLink="/register" class="btn btn-warning pull-right">Register</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="text-center">
+
+</div>

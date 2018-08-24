@@ -1,0 +1,58 @@
+<form id="creatPost" (ngSubmit)="create()" #f="ngForm" class="container-fluid">
+  <div class="form-group">
+    <label><b>Title</b></label>
+    <input class="form-control" type="text" title="Title" placeholder="Enter your item name" required ngModel #title="ngModel">
+  </div>
+  <div class="alert alert-warning" *ngIf="name.invalid && name.touched">Name cannot be empty</div>
+  <div class="form-group">
+    <label><b>Description</b></label>
+    <textarea rows="5" class="form-control" name="description" placeholder="Describe your item here" ngModel #description="ngModel"></textarea>
+    <label><b>Shipping</b></label>
+    <input class="form-control" type="text" name="shipping" placeholder="" required ngModel #name="ngModel">
+    <label><b>Price</b></label>
+    <input class="form-control" type="number" title="Title" placeholder="Enter your item price" required ngModel #name="ngModel">
+    <div class="form-group">
+			<label for="url">photo1</label>
+			<input  #url='ngModel' ngModel required type="text" name="url" class="form-control" placeholder="https://www.image.com">
+		</div>
+  
+  </div>
+  <div class="form-group">
+    <label for="url2">photo2</label>
+    <input #url='ngModel' ngModel required type="text" name="url2" class="form-control" placeholder="https://www.image.com">
+  </div>
+  <div class="form-group">
+    <label for="url3">photo3</label>
+    <input  #url='ngModel' ngModel required type="text" name="url3" class="form-control" placeholder="https://www.image.com">
+  </div>
+ 
+  <form ngNoForm action="" method="post" enctype="multipart/form-data">
+
+    <div>
+        <label for="picture" class='form-group'>Enter a Photo here</label>
+            <input  name="picture" ngModel #photo1="ngModel"  type="file" class="form-control"/>
+                <br>
+              </div>
+  </form>
+  <form ngNoForm action="" method="post" enctype="multipart/form-data">
+
+    <div>
+        <label for="picture2" class='form-group'>Enter a Second Photo Here</label>
+            <input  name="picture2" ngModel #photo2="ngModel" type="file" class="form-control"/>
+                <br>
+              </div>
+  </form>
+  <form ngNoForm action="" method="post" enctype="multipart/form-data">
+
+    <div>
+        <label for="picture3" class='form-group'>Enter a Third Photo Here</label>
+            <input  name="picture3" ngModel #photo3="ngModel"  type="file" class="form-control"/>
+                <br>
+              </div>
+  </form>
+
+
+  <button routerLink="#" class="btn btn-danger">Cancel</button>
+  <button routerLink="#" [disabled]="f.invalid" type="submit" class="btn btn-success float-right">Submit</button>
+
+</form>

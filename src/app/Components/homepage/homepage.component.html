@@ -1,0 +1,141 @@
+
+<nav class="navbar container-fluid">
+<div class="dropdown">
+  <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <i class="fas fa-user"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  
+<a class="do-ml" routerLink="" data-toggle="modal" data-target="#exampleModal">Login</a>
+
+<a class="do-ml" routerLink="user/{{uid}}'">View Profile</a>
+
+<!-- Modal -->
+    
+  </div>
+</div>
+   <a class="p-md-5" routerLink="">Home</a>
+      <a  routerLink="/watchlist">WatchList</a>
+       <a  routerLink="/createPost">Sell</a>
+        <a routerLink="/shoppingcart"> <i class="fas fa-shopping-cart"></i> <span class="counter">{{carts.length}}</span></a>
+         <button class="btn btn-primary" routerLink="/login">Log In</button>
+  
+<!-- </div> -->
+     </nav>
+<br>
+
+ <form id="searchForm" (ngSubmit)='searching()' #f='ngForm' class="container-fluid searchItems">
+   <div class="input-group ">
+      <input  type="text" name='inputName' class="searchBar form-control"  [(ngModel)]='inputName' placeholder="Search for postings here...">
+      <span class="input-group-btn">
+      <button class="btn btn-primary" type="submit">Search</button>
+      </span>
+  </div><!-- /input-group -->   
+  <!-- <button class="btn btn-primary" type="submit">Search</button>     -->
+  </form>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+  <div class="modal-header">       
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+        </div>
+    <div class="modal-body">
+  <div class="row">
+  <div class="col-md-5">
+  <h4>Log In</h4>
+  <label class="control-label" for="login">Login <span  *ngIf="login.touched && login.invalid" class="regForm text-danger">Please Enter your Username</span></label>
+                      <input type="text" class="form-control" name="login" aria-describedby="login"  ngModel #login="ngModel"  placeholder="Username" required>
+                   <!--    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span> -->
+  
+    <label class="control-label" for="password">Password <span *ngIf="Loginpassword.touched && Loginpassword.invalid" class="regForm text-danger">Please Enter your Password</span></label>
+                      <input type="password" class="form-control" name="password" id="Loginpassword" ngModel #Loginpassword="ngModel" aria-describedby="Loginpassword"  placeholder="Password" required>
+                   
+  <div class="do-mt">
+  <input type="submit" class="btn btn-primary form-control" id="goToChat" value="Sign in" />
+  </div>
+  </div>
+
+
+ <div class="col-md-6">
+  <h4>Create An Account</h4>
+  <label class="control-label" for="username">Username<span *ngIf="username.touched && username.invalid" class="regForm text-danger">Please Enter a Username</span></label>
+                      <input type="text" class="form-control" name="createUsername" id="username" aria-describedby="username"  ngModel #username="ngModel"  placeholder="Please Enter a Username" required>
+                   <!--    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span> -->
+  
+    <label class="control-label" for="password">Password<span *ngIf="password.touched && password.invalid" class="regForm text-danger">Please Enter a Password</span></label>
+                      <input type="password" class="form-control" name="createPassword"  ngModel #password="ngModel" aria-describedby="password"  placeholder="Please enter a Password" required>
+                     
+  
+    <label class="control-label" for="name">Full Name<span *ngIf="name.touched && name.invalid" class="regForm text-danger">Please Enter your Full name</span></label>
+                      <input type="text" class="form-control" name="name"  ngModel #name="ngModel" aria-describedby="name"  placeholder="Please Enter your Full Name" required>
+                    
+  
+    <label class="control-label" for="email">E-mail<span *ngIf="email.touched && email.invalid" class="regForm text-danger">Please Enter Your Email</span></label>
+                      <input type="text" class="form-control" name="email"  ngModel #email="ngModel" aria-describedby="password"  placeholder="Please Enter your Email" required>
+                    
+  <div class="do-mt">
+  <input type="submit" class="btn btn-success form-control" id="goToChat" value="Sign up" />
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <br>
+<div>
+<ul class="links" >
+
+<div *ngFor="let post of posts">
+<!-- <li  *ngIf='(post.title).toUpperCase().includes(this.inputValue.toUpperCase())'> -->
+<li>
+  <span id='posting'>
+  <h3 >{{post.title}}</h3>
+    <h3>{{post.shipping}}</h3>
+      <h3>{{post.title}}</h3>
+      <img [src]='post.url' alt="">{{post.url}}
+<!--   <img  [src]='post.url'> -->
+   <img [src]= post.url>
+ <br>
+   <button (click)="AddtoCartList(post)" class='btn-primary' >Add to cart</button>
+ <button (click)="AddtoWatchList(post.pid)" class='btn-success' >Add to WatchList</button>
+  </span>
+   <!--  <div class="btn-group" role="group" aria-label="Basic example"> -->
+   <!-- <br>
+   <div align="center">
+    {{post.tile}} <br>
+     {{post.price}}<br>
+     {{item.description}} <br>
+     {{post.shipping}} 
+     {{item.condition}} 
+     </div> -->
+   
+  </li>
+
+
+  <!-- <li >
+
+  <img  src=" https://cdn.pixabay.com/photo/2017/05/09/21/49/gecko-2299365_960_720.jpg">
+    <div class="btn-group" role="group" aria-label="Basic example">
+   <br>
+     <div align="center">
+     Tile of item <br>
+    Item description
+     Price<br>
+     Tile of item <br>
+    Item description    
+     </div>
+
+  </li> -->
+</div>
+ </ul>
+</div>
+
+
+
+  
